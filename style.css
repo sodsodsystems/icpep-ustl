@@ -672,7 +672,7 @@ h3 {
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-  height: 110px;
+  height: 135px;
   min-width: 0;
   transform: none !important;
 }
@@ -689,7 +689,7 @@ h3 {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center top;
+  object-position: center 15%;
   filter: brightness(0.85);
   transition: filter 0.15s ease;
 }
