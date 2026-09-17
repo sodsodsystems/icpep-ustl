@@ -35,20 +35,66 @@
   });
   selectAgent(agents.find(a=>a.name==='APEX')||agents[0]);
 
-  // Scroll Reveal Observer (Once per section, subtle 16px vertical movement + opacity fade)
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('is-visible');
-        observer.unobserve(entry.target); // Trigger once per element
+  // ── VALORANT PANEL NAVIGATION TRANSITION CONTROLLER ──
+  const overlay = document.querySelector('#nav-transition-overlay');
+  let isTransitioning = false;
+
+  function triggerTransition(onCovered) {
+    if (isTransitioning || !overlay) return;
+    isTransitioning = true;
+
+    // Phase 1: Swipe In (Staggered cover from left)
+    overlay.classList.remove('swipe-out');
+    overlay.classList.add('active', 'swipe-in');
+
+    // Covered duration: ~320ms swipe + 80ms stagger = 400ms peak
+    setTimeout(() => {
+      if (typeof onCovered === 'function') {
+        onCovered();
       }
+
+      // Phase 2: Swipe Out (Staggered reveal to right)
+      overlay.classList.remove('swipe-in');
+      overlay.classList.add('swipe-out');
+
+      // Total sequence complete: ~600ms
+      setTimeout(() => {
+        overlay.classList.remove('active', 'swipe-out');
+        isTransitioning = false;
+      }, 350);
+    }, 250);
+  }
+
+  // Intercept internal link clicks
+  document.addEventListener('click', (e) => {
+    const anchor = e.target.closest('a[href^="#"]');
+    if (!anchor) return;
+
+    const href = anchor.getAttribute('href');
+    if (!href || href === '#') return;
+
+    const targetElem = document.querySelector(href);
+    if (!targetElem) return;
+
+    e.preventDefault();
+
+    triggerTransition(() => {
+      targetElem.scrollIntoView({ behavior: 'auto' });
+      history.pushState(null, '', href);
     });
-  }, {
-    threshold: 0.15,
-    rootMargin: '0px 0px -50px 0px'
   });
 
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  // Handle browser back/forward history navigation
+  window.addEventListener('popstate', () => {
+    const hash = window.location.hash || '#home';
+    const targetElem = document.querySelector(hash);
+    if (targetElem) {
+      triggerTransition(() => {
+        targetElem.scrollIntoView({ behavior: 'auto' });
+      });
+    }
+  });
+
 })().catch((err)=>{
   console.error(err);
 });

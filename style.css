@@ -28,29 +28,19 @@ body {
   line-height: 1.6;
 }
 
-/* ── SCROLL REVEAL UTILITIES ── */
-.reveal {
-  opacity: 0;
-  transform: translateY(16px);
-  transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: opacity, transform;
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
-.reveal.is-visible {
-  opacity: 1;
-  transform: translateY(0);
+button {
+  font: inherit;
+  cursor: pointer;
 }
 
-.reveal-delay-1 { transition-delay: 0.08s; }
-.reveal-delay-2 { transition-delay: 0.16s; }
-.reveal-delay-3 { transition-delay: 0.24s; }
-
-@media (prefers-reduced-motion: reduce) {
-  .reveal {
-    opacity: 1 !important;
-    transform: none !important;
-    transition: none !important;
-  }
+a:focus-visible, button:focus-visible, summary:focus-visible {
+  outline: 3px solid #ff77ce;
+  outline-offset: 5px;
 }
 
 /* ── HEADER ── */
@@ -1151,4 +1141,90 @@ h1, h2, h3, .ticker {
   font-weight: 400;
   letter-spacing: 0;
   line-height: 1.15;
+}
+
+/* ── VALORANT PANEL NAVIGATION TRANSITION OVERLAY ── */
+.nav-transition-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+.nav-transition-overlay.active {
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.transition-panel {
+  position: relative;
+  flex: 1;
+  width: 125%;
+  height: 100%;
+  background: #18111c;
+  clip-path: polygon(0 0, 100% 0, 92% 100%, 0 100%);
+  transform: translateX(-120%);
+  border-right: 4px solid #ff0099;
+  box-shadow: 10px 0 25px rgba(255, 0, 153, 0.4), inset -6px 0 15px rgba(255, 0, 153, 0.25);
+  will-change: transform;
+}
+
+.transition-panel::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -8px;
+  bottom: 0;
+  width: 6px;
+  background: #ff77d7;
+  box-shadow: 0 0 12px #ff0099;
+}
+
+/* Staggered height/clip variations for Valorant feel */
+.transition-panel.p1 { clip-path: polygon(0 0, 100% 0, 93% 100%, 0 100%); }
+.transition-panel.p2 { clip-path: polygon(0 0, 96% 0, 89% 100%, 0 100%); background: #130d17; }
+.transition-panel.p3 { clip-path: polygon(0 0, 98% 0, 91% 100%, 0 100%); background: #1c1322; }
+.transition-panel.p4 { clip-path: polygon(0 0, 94% 0, 87% 100%, 0 100%); background: #110b14; }
+
+/* SWIPE IN (Left to Right Cover) */
+.nav-transition-overlay.swipe-in .transition-panel {
+  animation: panelSwipeIn 0.32s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+}
+
+.nav-transition-overlay.swipe-in .p1 { animation-delay: 0.00s; }
+.nav-transition-overlay.swipe-in .p2 { animation-delay: 0.04s; }
+.nav-transition-overlay.swipe-in .p3 { animation-delay: 0.08s; }
+.nav-transition-overlay.swipe-in .p4 { animation-delay: 0.12s; }
+
+/* SWIPE OUT (Left to Right Reveal) */
+.nav-transition-overlay.swipe-out .transition-panel {
+  transform: translateX(-5%);
+  animation: panelSwipeOut 0.32s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+}
+
+.nav-transition-overlay.swipe-out .p1 { animation-delay: 0.00s; }
+.nav-transition-overlay.swipe-out .p2 { animation-delay: 0.04s; }
+.nav-transition-overlay.swipe-out .p3 { animation-delay: 0.08s; }
+.nav-transition-overlay.swipe-out .p4 { animation-delay: 0.12s; }
+
+@keyframes panelSwipeIn {
+  0% { transform: translateX(-120%); }
+  100% { transform: translateX(-5%); }
+}
+
+@keyframes panelSwipeOut {
+  0% { transform: translateX(-5%); }
+  100% { transform: translateX(110%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .transition-panel {
+    transition: opacity 0.15s ease !important;
+    animation: none !important;
+    transform: none !important;
+  }
 }
