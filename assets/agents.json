@@ -1,0 +1,192 @@
+[
+  {
+    "id": "AGENT 000",
+    "role": "Adviser",
+    "officialName": "Engr. John Richard A. Musni",
+    "name": "ORACLE",
+    "unit": "Executive",
+    "portrait": "officers/Adviser_Portrait.png",
+    "pose": "officers/Adviser_Pose.png",
+    "description": "Guides the chapter and helps officers align plans and activities with university policies and student development goals."
+  },
+  {
+    "id": "AGENT 001",
+    "role": "President",
+    "officialName": "Sofia Mae B. Beltran",
+    "name": "APEX",
+    "unit": "Executive",
+    "portrait": "officers/Pres_Portrait.png",
+    "pose": "officers/Pres_Pose.png",
+    "description": "Leads the chapter, coordinates its officers, and represents the interests of Computer Engineering students."
+  },
+  {
+    "id": "AGENT 002",
+    "role": "Internal Vice President",
+    "officialName": "Allan Paul II A. Sodsod",
+    "name": "CORE",
+    "unit": "Executive",
+    "portrait": "officers/IVP_Portrait.png",
+    "pose": "officers/IVP_Pose.png",
+    "description": "Coordinates internal operations and supports communication and cooperation among officers, committees, and members."
+  },
+  {
+    "id": "AGENT 003",
+    "role": "Assistant Internal Vice President",
+    "officialName": "Arienne Meryl Q. Reyes",
+    "name": "FLUX",
+    "unit": "Executive",
+    "portrait": "officers/AVP_Portrait.png",
+    "pose": "officers/AVP_Pose.png",
+    "description": "Assists the Internal Vice President with internal coordination, member concerns, and follow-through on chapter plans."
+  },
+  {
+    "id": "AGENT 004",
+    "role": "External Vice President",
+    "officialName": "Jaryl Mhart S. Husain",
+    "name": "RANGE",
+    "unit": "Executive",
+    "portrait": "officers/EVP_Portrait.png",
+    "pose": "officers/EVP_Pose.png",
+    "description": "Coordinates connections with other chapters, partner organizations, and external collaborators."
+  },
+  {
+    "id": "AGENT 005",
+    "role": "Secretary",
+    "officialName": "Yei Sha Alyanna L. Ricarte",
+    "name": "TRACE",
+    "unit": "Finance & Internal Affairs",
+    "portrait": "officers/Secretary_Portrait.png",
+    "pose": "officers/Secretary_Pose.png",
+    "description": "Maintains meeting minutes, correspondence, and organizational records so decisions and commitments are documented."
+  },
+  {
+    "id": "AGENT 006",
+    "role": "Treasurer",
+    "officialName": "John Gabriel S. Ronao",
+    "name": "VAULT",
+    "unit": "Finance & Internal Affairs",
+    "portrait": "officers/Treasurer_Portrait.png",
+    "pose": "officers/Treasurer_Pose.png",
+    "description": "Maintains financial records and supports budgeting, collections, and disbursements under the chapter’s approved procedures."
+  },
+  {
+    "id": "AGENT 007",
+    "role": "Auditor",
+    "officialName": "Jake Mathew V. Boholano",
+    "name": "SCOPE",
+    "unit": "Finance & Internal Affairs",
+    "portrait": "officers/Auditor_Portrait.png",
+    "pose": "officers/Auditor_Pose.png",
+    "description": "Reviews financial records and supporting documents to help maintain accuracy, transparency, and accountability."
+  },
+  {
+    "id": "AGENT 008",
+    "role": "Event Manager",
+    "officialName": "Lance Daniel A. Filio",
+    "name": "IGNITE",
+    "unit": "Communications & Events",
+    "portrait": "officers/EventManager_Portrait.png",
+    "pose": "officers/EventManager_Pose.png",
+    "description": "Coordinates event planning, schedules, logistics, and collaboration among the teams delivering chapter programs."
+  },
+  {
+    "id": "AGENT 009",
+    "role": "Assistant Event Manager",
+    "officialName": "Hanz Daniel A. Filio",
+    "name": "IGNITE-1",
+    "unit": "Communications & Events",
+    "portrait": "officers/AsstEventManagerI_Portrait.png",
+    "pose": "officers/AsstEventManagerI_Pose.png",
+    "description": "Assists the Event Manager with event preparations, logistics, and assigned responsibilities during chapter programs."
+  },
+  {
+    "id": "AGENT 010",
+    "role": "Assistant Event Manager",
+    "officialName": "Ashanti Chantelle R. Regalario",
+    "name": "IGNITE-2",
+    "unit": "Communications & Events",
+    "portrait": "officers/AsstEventManagerII_Portrait.png",
+    "pose": "officers/AsstEventManagerII_Pose.png",
+    "description": "Assists the Event Manager with event preparations, logistics, and assigned responsibilities during chapter programs."
+  },
+  {
+    "id": "AGENT 011",
+    "role": "Public Relations Officer",
+    "officialName": "Kirsten Mari V. Garay",
+    "name": "PULSE",
+    "unit": "Communications & Events",
+    "portrait": "officers/PRO_Portrait.png",
+    "pose": "officers/PRO_Pose.png",
+    "description": "Coordinates public announcements and communications to keep members and the wider community informed."
+  },
+  {
+    "id": "AGENT 012",
+    "role": "Assistant Public Relations Officer",
+    "officialName": "Elvis Jr. R. De Loyola",
+    "name": "ECHO",
+    "unit": "Communications & Events",
+    "portrait": "officers/AsstPRO_Portrait.png",
+    "pose": "officers/AsstPRO_Pose.png",
+    "description": "Supports the Public Relations Officer in preparing announcements, sharing updates, and coordinating communications."
+  },
+  {
+    "id": "AGENT 013",
+    "role": "1st Year Representative",
+    "officialName": "Paul Alikhan R. Almonte",
+    "name": "ROOKIE",
+    "unit": "Year Level Representatives",
+    "portrait": "officers/1stYrRep_Portrait.PNG",
+    "pose": "officers/1stYrRep_Pose.PNG",
+    "description": "Represents 1st year students, communicates their concerns to the officers, and shares chapter updates and opportunities with the batch."
+  },
+  {
+    "id": "AGENT 014",
+    "role": "2nd Year Representative",
+    "officialName": "Laurice S. Taño",
+    "name": "DRIFT",
+    "unit": "Year Level Representatives",
+    "portrait": "officers/2ndYrRep_Portrait.png",
+    "pose": "officers/2ndYrRep_Pose.png",
+    "description": "Represents 2nd year students, communicates their concerns to the officers, and shares chapter updates and opportunities with the batch."
+  },
+  {
+    "id": "AGENT 015",
+    "role": "3rd Year Representative",
+    "officialName": "Eric Jr. R. Ras",
+    "name": "EDGE",
+    "unit": "Year Level Representatives",
+    "portrait": "officers/3rdYrRep_Portrait.png",
+    "pose": "officers/3rdYrRep_Pose.png",
+    "description": "Represents 3rd year students, communicates their concerns to the officers, and shares chapter updates and opportunities with the batch."
+  },
+  {
+    "id": "AGENT 016",
+    "role": "4th Year Representative",
+    "officialName": "Wilpaolo C. Mendoza",
+    "name": "RELIC",
+    "unit": "Year Level Representatives",
+    "portrait": "officers/4thYrRep_Portrait.png",
+    "pose": "officers/4thYrRep_Pose.png",
+    "description": "Represents 4th year students, communicates their concerns to the officers, and shares chapter updates and opportunities with the batch."
+  },
+  {
+    "id": "AGENT 017",
+    "role": "Creatives Committee",
+    "officialName": "Nathaniel Jords W. Sioson",
+    "name": "PRISM",
+    "unit": "Committees",
+    "portrait": "officers/CreativesComm_Portrait.png",
+    "pose": "officers/CreativesComm_Pose.png",
+    "description": "Develops visual materials and creative content that express the chapter’s identity and support its programs."
+  },
+  {
+    "id": "AGENT 018",
+    "role": "Membership Committee",
+    "officialName": "Robb Michael R. Sarcilla",
+    "name": "ANCHOR",
+    "unit": "Committees",
+    "portrait": "officers/MembershipComms_Portrait.png",
+    "pose": "officers/MembershipComms_Pose.png",
+    "description": "Supports membership records, onboarding, and engagement to help students stay connected to the chapter."
+  }
+]
