@@ -23,13 +23,13 @@
     b.dataset.id=agent.id;
     b.setAttribute('aria-label',(agent.officialName || agent.name)+', '+agent.role);
     
-    const thumbSrc = agent.pose || agent.portrait;
+    const thumbSrc = agent.portrait || agent.pose;
     const thumbHtml = thumbSrc 
-      ? '<div class="fg-thumb-wrap"><img class="tile-thumb" src="'+thumbSrc+'" alt="" loading="lazy"></div>' 
+      ? '<div class="wireframe-thumb-wrap"><img class="tile-thumb" src="'+thumbSrc+'" alt="" loading="lazy"></div>' 
       : '<b>'+agent.name.slice(0,2)+'</b>';
 
     const tileLabel = agent.shortName || (agent.officialName ? agent.officialName.split(' ')[0] : agent.name);
-    b.innerHTML=thumbHtml+'<span class="fg-tile-name">'+tileLabel+'</span><div class="fg-tile-bracket"></div>';
+    b.innerHTML=thumbHtml+'<span class="wireframe-tile-name">'+tileLabel+'</span><div class="wireframe-tile-bracket"></div>';
     b.addEventListener('click',()=>selectAgent(agent));
     grid.append(b);
   });
