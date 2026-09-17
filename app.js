@@ -34,6 +34,21 @@
     grid.append(b);
   });
   selectAgent(agents.find(a=>a.name==='APEX')||agents[0]);
+
+  // Scroll Reveal Observer (Once per section, subtle 16px vertical movement + opacity fade)
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target); // Trigger once per element
+      }
+    });
+  }, {
+    threshold: 0.15,
+    rootMargin: '0px 0px -50px 0px'
+  });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 })().catch((err)=>{
   console.error(err);
 });
