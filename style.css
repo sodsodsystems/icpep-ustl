@@ -459,32 +459,43 @@ h3 {
 /* ── WIREFRAME OFFICER SELECTION SECTION ── */
 .wireframe-roster {
   background: #09060d;
-  padding: 80px 6%;
-}
-
-.wireframe-container {
-  display: grid;
-  grid-template-columns: 40% 1fr;
-  gap: 36px;
-  align-items: stretch;
+  padding: 60px 5%;
   width: 100%;
+  box-sizing: border-box;
 }
 
-/* Left Column: Officer Display Section (40%) */
+/* Desktop (≥1024px) Layout Container */
+.wireframe-container {
+  max-width: 1200px;
+  width: 100%;
+  height: 760px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+  gap: 24px;
+  align-items: stretch;
+  box-sizing: border-box;
+  min-width: 0;
+  min-height: 0;
+}
+
+/* Left Column: Pose Display */
 .wireframe-left-col {
   width: 100%;
   height: 100%;
+  min-width: 0;
+  min-height: 0;
 }
 
 .wireframe-pose-card {
   width: 100%;
-  height: 600px;
-  max-height: 600px;
+  height: 100%;
   background: radial-gradient(circle at 50% 30%, #451139 0%, #110915 75%);
   border: 2px solid #5a2850;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.8), 0 0 30px rgba(255,0,157,0.3);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.8), 0 0 30px rgba(255,0,157,0.25);
+  box-sizing: border-box;
   position: relative;
 }
 
@@ -492,110 +503,163 @@ h3 {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: top center;
+  object-position: center top;
   display: block;
 }
 
-/* Right Column: Details + Selection Grid */
+/* Right Column: Grid with 200px Details + Rest for Selector */
 .wireframe-right-col {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
   width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 200px minmax(0, 1fr);
+  gap: 20px;
+  min-width: 0;
+  min-height: 0;
+  box-sizing: border-box;
 }
 
+/* Details Panel (200px Height) */
 .wireframe-details {
   background: rgba(26, 14, 30, 0.85);
   border: 1px solid #5a2750;
   border-left: 4px solid var(--pink);
-  padding: 20px 24px;
+  padding: 24px;
   border-radius: 8px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  height: 200px;
 }
 
 .wireframe-meta-row {
   display: flex;
   gap: 12px;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 6px;
+  height: 20px;
 }
 
 .wireframe-agent-id {
-  font: 900 13px/1 'Courier New', monospace;
+  font: 900 12px/1 'Courier New', monospace;
   color: #ff8ee3;
   letter-spacing: 1.5px;
 }
 
 .wireframe-agent-unit {
-  font: bold 11px/1 sans-serif;
+  font: bold 10px/1 sans-serif;
   color: #fff;
   background: var(--pink);
-  padding: 4px 8px;
+  padding: 3px 6px;
   border-radius: 2px;
   letter-spacing: 1px;
 }
 
 .wireframe-name {
   font-family: Valorant, Impact, Arial, sans-serif;
-  font-size: clamp(28px, 3.5vw, 44px);
+  font-size: clamp(24px, 2.6vw, 36px);
   font-weight: 900;
   color: #fff;
-  margin: 0 0 10px;
-  line-height: 1.05;
+  margin: 0;
+  line-height: 1.1;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 80px;
 }
 
 .wireframe-role-row {
   display: flex;
   align-items: center;
-  gap: 12px;
-  margin-bottom: 12px;
+  gap: 10px;
+  margin: 6px 0;
+  height: 24px;
 }
 
 .wireframe-role {
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 900;
   color: #ff85d3;
   letter-spacing: 1.5px;
 }
 
 .wireframe-codename {
-  font: bold 11px/1 'Courier New', monospace;
+  font: bold 10px/1 'Courier New', monospace;
   color: #f0cde5;
   background: rgba(90, 20, 75, 0.75);
   border: 1px solid #c7379b;
-  padding: 4px 8px;
+  padding: 3px 6px;
   border-radius: 3px;
 }
 
 .wireframe-desc {
-  font-size: 15px;
-  line-height: 1.6;
+  font-size: 13px;
+  line-height: 1.45;
   color: #d3bfd0;
   margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
+/* Selector Area (Minmax Rest of Height, Internal Scroll) */
 .wireframe-selection-area {
   background: rgba(15, 8, 18, 0.9);
   border: 1px solid #482140;
-  padding: 18px 20px 20px;
+  padding: 16px;
   border-radius: 8px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
 }
 
 .wireframe-grid-title {
-  font: 12px/1 'Courier New', monospace;
+  font: 11px/1 'Courier New', monospace;
   color: #ff9de4;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  margin: 0 0 14px;
-  padding-bottom: 8px;
+  margin: 0 0 12px;
+  padding-bottom: 6px;
   border-bottom: 1px solid #3d1b37;
+  flex-shrink: 0;
 }
 
 .wireframe-agent-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 12px;
+  gap: 10px;
+  overflow-y: auto;
+  padding-right: 4px;
+  flex-grow: 1;
+  min-height: 0;
 }
 
+/* Custom Scrollbar for Selector */
+.wireframe-agent-grid::-webkit-scrollbar {
+  width: 5px;
+}
+.wireframe-agent-grid::-webkit-scrollbar-track {
+  background: rgba(20, 10, 24, 0.8);
+  border-radius: 3px;
+}
+.wireframe-agent-grid::-webkit-scrollbar-thumb {
+  background: #6b245a;
+  border-radius: 3px;
+}
+.wireframe-agent-grid::-webkit-scrollbar-thumb:hover {
+  background: var(--pink);
+}
+
+/* Selection Cards */
 .wireframe-agent-grid .agent-tile {
   position: relative;
   background: #1a0c1f;
@@ -604,15 +668,18 @@ h3 {
   border-radius: 6px;
   cursor: pointer;
   outline: none;
-  transition: all 0.15s ease;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  box-sizing: border-box;
+  height: 110px;
+  min-width: 0;
+  transform: none !important;
 }
 
 .wireframe-thumb-wrap {
   width: 100%;
-  aspect-ratio: 1/1;
+  height: calc(100% - 20px);
   overflow: hidden;
   border-radius: 3px;
   background: #0d0716;
@@ -622,37 +689,38 @@ h3 {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: top center;
+  object-position: center top;
   filter: brightness(0.85);
   transition: filter 0.15s ease;
 }
 
 .wireframe-tile-name {
-  font: 900 10px/1.2 monospace;
+  font: 900 10px/20px monospace;
+  height: 20px;
   color: #c8b5c6;
-  margin-top: 5px;
   text-align: center;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   width: 100%;
+  box-sizing: border-box;
 }
 
 .wireframe-agent-grid .agent-tile:hover {
   border-color: #ff0099;
-  transform: translateY(-2px);
 }
 
 .wireframe-agent-grid .agent-tile:hover .tile-thumb {
   filter: brightness(1.1);
 }
 
+/* Active Card: Glow and Border ONLY (No scale transforms) */
 .wireframe-agent-grid .agent-tile[aria-pressed=true] {
   border-color: #ff0099;
-  background: #400a35;
-  transform: scale(1.06) translateY(-3px);
-  box-shadow: 0 0 22px rgba(255,0,153,0.85), 0 0 12px rgba(255,120,210,0.6);
-  z-index: 5;
+  background: #3e0b35;
+  box-shadow: 0 0 16px rgba(255,0,153,0.85), inset 0 0 6px rgba(255,0,153,0.5);
+  z-index: 2;
+  transform: none !important;
 }
 
 .wireframe-agent-grid .agent-tile[aria-pressed=true] .tile-thumb {
@@ -667,15 +735,78 @@ h3 {
 .wireframe-tile-bracket {
   display: none;
   position: absolute;
-  inset: -3px;
+  inset: -2px;
   border: 2px solid #ff0099;
   border-radius: 7px;
   pointer-events: none;
-  animation: fg-pulse-pink 1.2s infinite alternate;
 }
 
 .wireframe-agent-grid .agent-tile[aria-pressed=true] .wireframe-tile-bracket {
   display: block;
+}
+
+/* ── RESPONSIVE STACKING BREAKPOINTS ── */
+@media (max-width: 1023px) {
+  .wireframe-container {
+    grid-template-columns: 1fr;
+    height: auto;
+    gap: 24px;
+  }
+
+  .wireframe-pose-card {
+    height: auto;
+    aspect-ratio: 4/5;
+    max-height: 520px;
+    margin: 0 auto;
+    max-width: 450px;
+  }
+
+  .wireframe-right-col {
+    grid-template-rows: auto auto;
+  }
+
+  .wireframe-details {
+    height: auto;
+    padding: 20px 24px;
+  }
+
+  .wireframe-name {
+    -webkit-line-clamp: initial;
+    max-height: none;
+  }
+
+  .wireframe-desc {
+    -webkit-line-clamp: initial;
+  }
+
+  .wireframe-selection-area {
+    height: auto;
+  }
+
+  .wireframe-agent-grid {
+    grid-template-columns: repeat(4, 1fr);
+    overflow-y: visible;
+    max-height: none;
+  }
+
+  .wireframe-agent-grid .agent-tile {
+    height: 120px;
+  }
+}
+
+@media (max-width: 639px) {
+  .wireframe-agent-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+
+  .wireframe-agent-grid .agent-tile {
+    height: 110px;
+  }
+
+  .wireframe-details {
+    padding: 16px 20px;
+  }
 }
 
 @keyframes fg-pulse-pink {
